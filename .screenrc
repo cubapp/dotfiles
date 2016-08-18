@@ -1,0 +1,7 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "++%H %{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %c c++"
+
+screen -t BASH 1 bash
+screen -t BASH2 2 bash
+screen -t BASH3 3 bash
