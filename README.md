@@ -9,3 +9,13 @@ My old screenrc opens three bash shells (current user) plus adds hardline with i
 * date
 * time
 * nickname "c++" ;-)
+
+## aliases 
+
+Aliases to use lt, ..., odd :
+* ls -alt (first the newest files)
+* ... for cd ../.. 
+* odd for better looking od 
+* lsofi for better network lsof 
+
+
