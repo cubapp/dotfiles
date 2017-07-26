@@ -28,5 +28,5 @@ alias ipip='function _ipip(){ echo "IP Query for: $1:"; curl http://ipinfo.io/$1
 # Get myIP address
 alias myip='curl http://ipecho.net/plain; echo ;'
 # Generate script to rename files in $PWD to its SHA1 hashes
-alias sha1move='for i in `ls -1` ; do shasum $i ; done  | awk '{print "mv " $2  " " $1 }'
-alias sha256move='for i in `ls -1` ; do sha256sum $i ; done  | awk '{print "mv " $2  " " $1 }'
+function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
+function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
