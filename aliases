@@ -1,3 +1,5 @@
+# Aliases CubaPP use. Original: https://github.com/cubapp/dotfiles
+# Use on your own risk ;-) 
 alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
@@ -32,3 +34,7 @@ alias myip='curl http://ipecho.net/plain; echo ;'
 # Generate script to rename files in $PWD to its SHA1 hashes
 function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
+#
+# Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
+# [ -f ~/.aliases ] && source ~/.aliases 
+# 
