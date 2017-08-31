@@ -18,4 +18,11 @@ Aliases to use lt, ..., odd :
 * odd for better looking od 
 * lsofi for better network lsof 
 
+Either copy or link the aliases into your ~/.alias file and call it from .bashrc or .zshrc:
+```
+[ -f ~/.aliases ] && source ~/.aliases
+```
+ 
+ 
+
 
