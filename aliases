@@ -34,6 +34,7 @@ alias myip='curl http://ipecho.net/plain; echo ;'
 # Generate script to rename files in $PWD to its SHA1 hashes
 function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
+function subdomains(){ echo "Domain info about $1: "; curl -s https://www.virustotal.com/ui/domains/$1/subdomains\?limit\=39 | grep self ;} ;
 #
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
