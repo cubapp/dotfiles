@@ -39,6 +39,9 @@ function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv 
 function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function subdomains(){ echo "Domain info about $1: "; curl -s https://www.virustotal.com/ui/domains/$1/subdomains\?limit\=39 | grep self ;} ;
 #
+# Function to return NT hash from ther passwodr (first parameter)
+function nthash(){ echo -n "NT hash from password $1: "; echo -n $1 | iconv -t utf16le | openssl md4; }; 
+
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
 # 
