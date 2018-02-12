@@ -41,6 +41,12 @@ function subdomains(){ echo "Domain info about $1: "; curl -s https://www.virust
 #
 # Function to return NT hash from ther passwodr (first parameter)
 function nthash(){ echo -n "NT hash from password $1: "; echo -n $1 | iconv -t utf16le | openssl md4; }; 
+#
+# xor utility from https://github.com/dirtbags/fluffy
+# then function unxor parameter1   parameter2        
+#                      \- filename  \- key 0x22
+function unxor(){ echo "Unxor $1 with $2: "; xor $2 < $1 | strings ; };
+
 
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
