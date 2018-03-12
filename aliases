@@ -47,6 +47,9 @@ function nthash(){ echo -n "NT hash from password $1: "; echo -n $1 | iconv -t u
 #                      \- filename  \- key 0x22
 function unxor(){ echo "Unxor $1 with $2: "; xor $2 < $1 | strings ; };
 
+# Firefox to grab the screenshot of the page
+FFOX="/Applications/Firefox.app/Contents/MacOS/firefox";
+function ffscreenshot(){ $FFOX --private-window  -screenshot tw.png --headless  --new-instance $1  ;}; 
 
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
