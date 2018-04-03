@@ -23,6 +23,8 @@ Either copy or link the aliases into your ~/.alias file and call it from .bashrc
 [ -f ~/.aliases ] && source ~/.aliases
 ```
  
- 
+## resolv.conf
+
+Free and usable DNS servers 
 
 
