@@ -28,6 +28,9 @@ alias md='mkdir -p'
 alias rd='rmdir'
 alias odd='od -A x -t x1z -w32 -v'
 alias armdump='/xxx/arm-build/install/bin/arm-none-eabi-objdump -D -b binary -marm'
+# dir diff using git, requires two dirsnames
+# dirdiff directoryA directoryB
+alias dirdiff="git diff --no-index "
 # Get geo and other info about an IP address
 alias ipip='function _ipip(){ echo "IP Query for: $1:"; curl http://ipinfo.io/$1; echo " "; }; _ipip'
 # Get myIP address
