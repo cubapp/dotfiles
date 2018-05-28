@@ -37,6 +37,8 @@ alias ipip='function _ipip(){ echo "IP Query for: $1:"; curl http://ipinfo.io/$1
 alias myip='curl http://ipecho.net/plain; echo ;'
 # wwget just pretends to be an old browser. Debug log is appended to the logfile (appended, not deleted ;-)
 alias wwget='wget --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0" --header="Accept: image/png,image/*;q=0.8,*/*;q=0.5" --header="Accept-Language: en-US,en;q=0.5" --header="Accept-Encoding: gzip, deflate" --header="Referer: https://www.google.com" -d -v -a wwget-log.txt'
+# egrp greps the output for several keywords I use 
+alias egrp="egrep -i 'bin|admin|root|default|busybox|proc|status|anime|route|asswor|helpe|http|watchdog' "
 # Generate script to rename files in $PWD to its SHA1 hashes
 function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
