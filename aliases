@@ -26,8 +26,8 @@ alias lS='ls -alSr'
 alias lf='readlink -f '
 alias md='mkdir -p'
 alias rd='rmdir'
-# mcd - creates dir $1 and cd into it
-function mcd() { mkdir "$1" && cd "$1"; };
+# mkcd - creates dir $1 and cd into it
+function mkcd() { mkdir "$1" && cd "$1"; };
 alias odd='od -A x -t x1z -w32 -v'
 alias armdump='/xxx/arm-build/install/bin/arm-none-eabi-objdump -D -b binary -marm'
 # dir diff using git, requires two dirsnames
