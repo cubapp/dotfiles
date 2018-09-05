@@ -1,0 +1,6 @@
+# tune the history in the shell
+# append to the ~/.bashrc or ~/.zshrc 
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries, may not work in ZSH
+export HISTSIZE=100000                   # many commands in ongoing session memory
+export HISTFILESIZE=100000               # many lines in .bash_history
+shopt -s histappend                      # append to history, don't overwrite it
