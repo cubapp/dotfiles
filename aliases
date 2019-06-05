@@ -1,18 +1,6 @@
 # Aliases CubaPP use. Original: https://github.com/cubapp/dotfiles
 # Use on your own risk ;-) 
-alias ...='../..'
-alias ....='../../..'
-alias .....='../../../..'
-alias ......='../../../../..'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
+###### Aliases ######
 alias d='dirs -v | head -10'
 alias l='ls -lah'
 alias la='ls -lAh'
@@ -26,8 +14,7 @@ alias lS='ls -alSr'
 alias lf='readlink -f '
 alias md='mkdir -p'
 alias rd='rmdir'
-# mkcd - creates dir $1 and cd into it
-function mkcd() { mkdir "$1" && cd "$1"; };
+alias cat='cat -v'
 alias odd='od -A x -t x1z -w32 -v'
 alias armdump='/xxx/arm-build/install/bin/arm-none-eabi-objdump -D -b binary -marm'
 # dir diff using git, requires two dirsnames
@@ -41,14 +28,17 @@ alias myip='curl http://ipecho.net/plain; echo ;'
 alias wwget='wget --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0" --header="Accept: image/png,image/*;q=0.8,*/*;q=0.5" --header="Accept-Language: en-US,en;q=0.5" --header="Accept-Encoding: gzip, deflate" --header="Referer: https://www.google.com" -d -v -a wwget-log.txt'
 # egrp greps the output for several keywords I use 
 alias egrp="egrep -i 'bin|admin|root|default|busybox|proc|status|anime|route|asswor|helpe|http|watchdog' "
+###### Functions #######
+# mkcd - creates dir $1 and cd into it
+function mkcd() { mkdir "$1" && cd "$1"; };
 # Generate script to rename files in $PWD to its SHA1 hashes
 function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
 function subdomains(){ echo "Domain info about $1: "; curl -s https://www.virustotal.com/ui/domains/$1/subdomains\?limit\=39 | grep self ;} ;
-#
+
 # Function to return NT hash from ther passwodr (first parameter)
 function nthash(){ echo -n "NT hash from password $1: "; echo -n $1 | iconv -t utf16le | openssl md4; }; 
-#
+
 # xor utility from https://github.com/dirtbags/fluffy
 # then function unxor parameter1   parameter2        
 #                      \- filename  \- key 0x22
@@ -60,4 +50,3 @@ function ffscreenshot(){ $FFOX --private-window  -screenshot tw.png --headless  
 
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
-# 
