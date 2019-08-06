@@ -28,6 +28,8 @@ alias myip='curl http://ipecho.net/plain; echo ;'
 alias wwget='wget --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0" --header="Accept: image/png,image/*;q=0.8,*/*;q=0.5" --header="Accept-Language: en-US,en;q=0.5" --header="Accept-Encoding: gzip, deflate" --header="Referer: https://www.google.com" -d -v -a wwget-log.txt'
 # egrp greps the output for several keywords I use 
 alias egrp="egrep -i 'bin|admin|root|default|busybox|proc|status|anime|route|asswor|helpe|http|watchdog' "
+# grep IP from stdin
+alias grepIP='grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"'
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
 function mkcd() { mkdir "$1" && cd "$1"; };
