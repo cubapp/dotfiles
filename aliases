@@ -30,6 +30,8 @@ alias wwget='wget --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Ge
 alias egrp="egrep -i 'bin|admin|root|default|busybox|proc|status|anime|route|asswor|helpe|http|watchdog' "
 # grep IP from stdin
 alias grepIP='grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"'
+# Linux architectures and stuff
+alias ARCHS='echo \{arm4,arm5,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,x86_64,x86,Armv61,armv61,i686,ppc,i586,m68k,sh,telnetd,bins\}'
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
 function mkcd() { mkdir "$1" && cd "$1"; };
