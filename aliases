@@ -31,7 +31,7 @@ alias egrp="egrep -i 'bin|admin|root|default|busybox|proc|status|anime|route|ass
 # grep IP from stdin
 alias grepIP='grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"'
 # Linux architectures and stuff
-alias ARCHS='echo \{arc,arm,arm4,arm5,arm5n,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,x86_64,x86,x64,Armv61,armv61,i686,ppc,ppc440,i586,m68k,sh,spc,telnetd,bins\}'
+alias ARCHS='echo \{arc,arm,arm4,arm5,arm5n,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,x86_64,x86,x64,Armv61,armv61,i686,ppc,ppc440,i586,m68k,sh,spc,superh,telnetd,bins\}'
 # Tmux - when there is tmux running, attach to it, else run a new instance
 alias tm='tmux a || tmux'
 
