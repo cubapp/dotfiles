@@ -71,6 +71,12 @@ function upx.all(){ for i in `ls -1`; do upx.out -d "${i}" -o "${i}.uupx"; done 
 #  mv 7e3778a2874959624134298d1bc45882f3cc7409be89d4bedd7c4b124d6f478c cal
 function fromsha() { awk '{print $1 " " $3 " " $2 }' < .mv > .mv2; sh -x ./.mv2 ; };
 
+# print printable characters
+#
+function ascii() {
+ printf '%b\n' $(printf '\\%03o' {30..127})
+}
+
 ###### Usage ######
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
