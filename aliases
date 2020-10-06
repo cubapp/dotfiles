@@ -24,6 +24,7 @@ alias dirdiff="git diff --no-index "
 alias ipip='function _ipip(){ echo "IP Query for: $1:"; curl http://ipinfo.io/$1; echo " "; }; _ipip'
 # Get myIP address
 alias myip='curl http://ipecho.net/plain; echo ;'
+alias wtfip='dig +short myip.opendns.com @resolver1.opendns.com'
 # wwget just pretends to be an old browser. Debug log is appended to the logfile (appended, not deleted ;-)
 alias wwget='wget --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0" --header="Accept: image/png,image/*;q=0.8,*/*;q=0.5" --header="Accept-Language: en-US,en;q=0.5" --header="Accept-Encoding: gzip, deflate" --header="Referer: https://www.google.com" -d -v -a wwget-log.txt'
 # egrp greps the output for several keywords I use 
@@ -34,6 +35,7 @@ alias grepIP='grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4
 alias ARCHS='echo \{arc,arm,arm4,arm5,arm5n,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,x86_64,x86,x64,Armv61,armv61,i686,ppc,ppc440,i586,m68k,sh,spc,sparc,superh,telnetd,bins\}'
 # Tmux - when there is tmux running, attach to it, else run a new instance
 alias tm='tmux a || tmux'
+alias ipa='ip -c -br a'
 
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
