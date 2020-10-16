@@ -41,9 +41,17 @@ alias ipa='ip -c -br a'
 # mkcd - creates dir $1 and cd into it
 function mkcd() { mkdir "$1" && cd "$1"; };
 
-# Generate script to rename files in $PWD to its SHA1 hashes
-function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
-function sha256move(){ for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }';  };
+# Generate script to rename files in $PWD to its SHA hashes
+# in case of sha256move we not only move the files to its sha256 representation, but also prints the reverse script
+function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }' > .sha ; sh -x .sha;  };
+# unlike sha1, the sha256 moves the files and prints the reverse script (which you can use later)
+function sha256move(){
+                for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }' > .mv256 ;
+                sh .mv256;  echo -n "# Moved: "; wc -l .mv256 ; echo "# Reverse move: ";
+                awk '{print $1 " " $3 " " $2 }' < .mv256 ;
+};
+
+#enumerate subdomains
 function subdomains(){ echo "Domain info about $1: "; curl -s https://www.virustotal.com/ui/domains/$1/subdomains\?limit\=39 | grep self ;} ;
 
 # Function to return NT hash from ther passwodr (first parameter)
