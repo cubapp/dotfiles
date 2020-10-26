@@ -1,6 +1,11 @@
 # Aliases CubaPP use. Original: https://github.com/cubapp/dotfiles
 # Use on your own risk ;-) 
 ###### Aliases ######
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias d='dirs -v | head -10'
 alias l='ls -lah'
 alias la='ls -lAh'
@@ -39,7 +44,7 @@ alias ipa='ip -c -br a'
 
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
-function mkcd() { mkdir "$1" && cd "$1"; };
+function mkcd() { mkdir -p "$1" && cd "$1"; };
 
 # Generate script to rename files in $PWD to its SHA hashes
 # in case of sha256move we not only move the files to its sha256 representation, but also prints the reverse script
