@@ -96,6 +96,18 @@ function ascii() {
 #
 function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location (Mac os X) 
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+
+
 ###### Usage ######
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
 # [ -f ~/.aliases ] && source ~/.aliases 
