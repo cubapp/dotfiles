@@ -48,10 +48,10 @@ function mkcd() { mkdir -p "$1" && cd "$1"; };
 
 # Generate script to rename files in $PWD to its SHA hashes
 # in case of sha256move we not only move the files to its sha256 representation, but also prints the reverse script
-function sha1move(){ for i in `ls -1` ; do shasum $i ; done  | awk '{ print "mv " $2 " " $1 }' > .sha ; sh -x .sha;  };
+function sha1move(){ for i in * ; do shasum "$i" ; done  | awk '{ print "mv " $2 " " $1 }' > .sha ; sh -x .sha;  };
 # unlike sha1, the sha256 moves the files and prints the reverse script (which you can use later)
 function sha256move(){
-                for i in `ls -1` ; do sha256sum $i ; done  | awk '{ print "mv " $2 " " $1 }' > .mv256 ;
+                for i in * ; do sha256sum "${i}" ; done  | awk '{ print "mv " $2 " " $1 }' > .mv256 ;
                 sh .mv256;  echo -n "# Moved: "; wc -l .mv256 ; echo "# Reverse move: ";
                 awk '{print $1 " " $3 " " $2 }' < .mv256 ;
 };
@@ -72,11 +72,11 @@ FFOX="/Applications/Firefox.app/Contents/MacOS/firefox";
 function ffscreenshot(){ $FFOX --private-window  -screenshot tw.png --headless  --new-instance $1  ;}; 
 
 # A simple function to call a given program over each file in the dir
-# (I am lazy to write: "for i in `ls -1`; do this "$i" ; done"
-function doithere(){ for i in `ls -1`; do "$1" "${i}" ; done }
+# (I am lazy to write: "for i in * ; do this "$i" ; done"
+function doithere(){ for i in * ; do "$@" "${i}" ; done }
 
 # A simple function to un upx all files in the dir
-function upx.all(){ for i in `ls -1`; do upx.out -d "${i}" -o "${i}.uupx"; done }
+function upx.all(){ for i in * ; do upx.out -d "${i}" -o "${i}.uupx"; done }
 
 ##### A function to turn SHA256 filenames into the original names. The name -> SHA file is in .mv file 
 # The function turns .mv into .mv2 and execute it verbosely
