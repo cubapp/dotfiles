@@ -11,7 +11,6 @@ alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lha'
 alias lsa='ls -lah'
-alias lsofi='lsof -i -n -P'
 alias lt='ls -altr'
 alias lh='ls -altrh'
 alias lS='ls -alSr'
@@ -41,6 +40,8 @@ alias ARCHS='echo \{arc,arm,arm4,arm5,arm5n,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,
 # Tmux - when there is tmux running, attach to it, else run a new instance
 alias tm='tmux a || tmux'
 alias ipa='ip -c -br a'
+alias lsofi='lsof -i -n -P'
+alias ssi='ss -ntaupe'
 
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
