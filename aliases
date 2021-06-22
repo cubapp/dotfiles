@@ -42,6 +42,8 @@ alias tm='tmux a || tmux'
 alias ipa='ip -c -br a'
 alias lsofi='lsof -i -n -P'
 alias ssi='ss -ntaupe'
+# using exa for better ls
+alias etree='exa -abghHlT'
 
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
