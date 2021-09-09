@@ -12,7 +12,7 @@ My old screenrc opens three bash shells (current user) plus adds hardline with i
 
 ## aliases 
 
-Aliases to use lt, ..., odd :
+Aliases and functions to use lt, ..., odd :
 * ls -alt (first the newest files)
 * ... for cd ../.. 
 * odd for better looking od 
