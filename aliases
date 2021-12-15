@@ -44,6 +44,9 @@ alias lsofi='lsof -i -n -P'
 alias ssi='ss -ntaupe'
 # using exa for better ls
 alias etree='exa -abghHlT'
+#strings with parameters: show offset in HEX -t x 
+#			: show spaces -w 
+alias sttr='strings -t x -w '
 
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
