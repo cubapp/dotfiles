@@ -121,4 +121,4 @@ function cht.sh () {
 
 ###### Usage ######
 # Usage: put the aliases file whereever you like and source it in .bashrc or .zshrc via 
-# [ -f ~/.aliases ] && source ~/.aliases ]
+# [ -f ~/.aliases ] && source ~/.aliases 
