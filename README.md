@@ -23,7 +23,7 @@ git clone https://github.com/cubapp/dotfiles
 cd dotfiles
 cp aliases ~/.aliases
 cp .tmux.conf ~/
-echo "[ -f ~/.aliases ] && source ~/.aliases ]" >> ~/.bashrc
+echo "[ -f ~/.aliases ] && source ~/.aliases " >> ~/.bashrc
 
 ```
 
