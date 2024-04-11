@@ -83,7 +83,7 @@ function ffscreenshot(){ $FFOX --private-window  -screenshot tw.png --headless  
 function doithere(){ for i in * ; do "$@" "${i}" ; done }
 
 # A simple function to un upx all files in the dir
-function upx.all(){ for i in * ; do upx.out -d "${i}" -o "${i}.uupx"; done }
+function upx.all(){ mkdir .uupx; for i in * ; do upx.out -d ".uupx/${i}" -o "${i}.uupx"; done ; rmdir .uupx || echo " >>>> UPXed binary found. Go to .uupx dir "; }
 
 ##### A function to turn SHA256 filenames into the original names. The name -> SHA file is in .mv file 
 # The function turns .mv into .mv2 and execute it verbosely
