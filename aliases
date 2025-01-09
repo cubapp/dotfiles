@@ -40,7 +40,8 @@ alias ARCHS='echo \{arc,arm,arm4,arm5,arm5n,arm6,arm7,arm8,mips,mipsel,mpsl,sh4,
 # Tmux - when there is tmux running, attach to it, else run a new instance
 # 2024-04-03 tmux -u for NetBSD with Oh My Zsh Angoster scheme 
 alias tm='tmux -u a || tmux -u'
-alias ipa='ip -c -br a'
+# hate Linux ip command. 'ipa' gives me Addresses and Routes
+alias ipa='echo "------- Addresses:"; ip -c -br a ; echo "------- Routes: "; ip -c route | column -t'
 alias lsofi='lsof -i -n -P'
 alias ssi='ss -ntaupe'
 # using exa for better ls
