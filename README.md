@@ -10,6 +10,16 @@ My old screenrc opens three bash shells (current user) plus adds hardline with i
 * time
 * nickname "c++" ;-)
 
+### Howto use tmux: 
+```
+Control key is Ctrl-A like in screen
+Ctrl-A c     -> new terminal
+Ctrl-A -     -> Split terminal horizontally
+Ctrl-A |     -> Split terminal vertically
+Ctrl-A Up|Down|Left|Right arrow -> switch to splitted terminals 
+```
+tm is alias for attaching running tmux OR creating new if there is not any. 
+
 ## aliases 
 
 Aliases and functions to use lt, ..., odd :
