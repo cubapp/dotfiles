@@ -6,12 +6,19 @@ git clone https://github.com/cubapp/dotfiles
 cd dotfiles
 sh ./setup.sh
 ```
+Optionally if you need the aliases immediately - source the ~/.aliases 
+```
+source ~/.aliases
+# i know, I know, I can do this too: 
+# . ~/.aliases 
+```
+
 or, if you are concerned, check all aliases and manually add: 
 ```
 cp aliases ~/.aliases
 cp .tmux.conf ~/
 echo "[ -f ~/.aliases ] && source ~/.aliases " >> ~/.bashrc
-
+. ~/.aliases
 ```
 
 ## .screenrc and .tmux.conf
