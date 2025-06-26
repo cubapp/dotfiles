@@ -51,6 +51,11 @@ alias etree='exa -abghHlT'
 alias sttr='strings -t x -w '
 alias sless='strings -t x -w|less '
 
+# Do not do git aliases this way. Use .gitconfig... but... 
+alias git-log-alias='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative'
+alias git-diff-alias='git fetch && git diff master origin/master'
+
+
 ###### Functions #######
 # mkcd - creates dir $1 and cd into it
 function mkcd() { mkdir -p "$1" && cd "$1"; };
