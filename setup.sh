@@ -1,5 +1,9 @@
 #!/bin/bash
 # Script for setting up aliases and tmux config. 
+# Do not run this script unless you know ... 
+# You have been warned! :-) 
+
+
 echo "Setting up aliases and tmux.config. Please review both files as well as this script. Trust no one :-)"
 echo "-------------------------------------------------------------------------------------------------"
 
