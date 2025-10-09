@@ -50,6 +50,8 @@ alias etree='exa -abghHlT'
 #			: show spaces -w 
 alias sttr='strings -t x -w '
 alias sless='strings -t x -w|less '
+# getting RaspiVersion - sometimes from /pro/cpuinfo, but this works everywhere
+alias raspiver="cat /sys/firmware/devicetree/base/model; echo "
 
 # Do not do git aliases this way. Use .gitconfig... but... 
 alias git-log-alias="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
