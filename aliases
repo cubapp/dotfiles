@@ -57,8 +57,10 @@ alias raspiver="cat /sys/firmware/devicetree/base/model; echo "
 alias git-log-alias="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias git-diff-alias='git fetch && git diff master origin/master'
 
+#I'm tired of writting uname -a all the time 
+alias un='uname -a'
 
-###### Functions #######
+############################## Functions ###############################
 # mkcd - creates dir $1 and cd into it
 function mkcd() { mkdir -p "$1" && cd "$1"; };
 
