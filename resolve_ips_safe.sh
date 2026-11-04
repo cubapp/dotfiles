@@ -88,7 +88,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
         cmd=(dig +short +timeout=4 +tries=2 -x "$ip")
         [[ -n "$CUSTOM_DNS" ]] && cmd+=("@${CUSTOM_DNS}")
     elif command -v host >/dev/null 2>&1; then
-        cmd=(host -W 4 -R 2 "$ip")
+        cmd=(host -W 8 -R 2 "$ip")
         [[ -n "$CUSTOM_DNS" ]] && cmd+=("${CUSTOM_DNS}")
     else
         echo "${ip},NO_DNS_TOOL_AVAILABLE" >&2
